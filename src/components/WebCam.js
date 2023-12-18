@@ -8,7 +8,6 @@ const videoConstraints = {
 };
 
 const WebcamCapture = () => {
-  const [camMode, setCamMode] = useState("user");
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
 
@@ -25,17 +24,10 @@ const WebcamCapture = () => {
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        videoConstraints={{ ...videoConstraints, facingMode: camMode }}
+        videoConstraints={videoConstraints}
         minScreenshotWidth={180}
         minScreenshotHeight={180}
       />
-      <button
-        onClick={() => {
-          setCamMode("environment");
-        }}
-      >
-        Switch Camera
-      </button>
       <button onClick={capture}>Capture Photo</button>
       {imgSrc && <img src={imgSrc} alt="img" width={100} height={100} />}
     </div>
