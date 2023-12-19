@@ -170,7 +170,6 @@ const MediaRecorderCapture = ({ camToggle }) => {
         </button>
       </div>
       <div>
-        <h3>MediaRecorderCapture</h3>
         <video
           className="recorder"
           style={{ width: 300, height: 300, marginTop: "-35px" }}
