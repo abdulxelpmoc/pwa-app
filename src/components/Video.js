@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
+const backCamConstraints = {
+  facingMode: { exact: "environment" },
+};
+
+const frontCamConstraints = {
+  facingMode: "user",
+};
+
 const MediaRecorderCapture = ({ camToggle }) => {
   const [mediaRecorder, setMediaRecorder] = useState({});
   const [isRecording, setIsRecording] = useState(false);
@@ -92,9 +100,7 @@ const MediaRecorderCapture = ({ camToggle }) => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: true,
-          video: {
-            facingMode: camToggle ? "user" : { exact: "environment" },
-          },
+          video: camToggle ? frontCamConstraints : backCamConstraints,
         });
         console.log("Stream fetched");
         resolve(stream);
