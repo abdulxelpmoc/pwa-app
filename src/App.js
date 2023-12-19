@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WebcamCapture from "./components/WebCam";
 import Video from "./components/Video";
 export default function App() {
-  const [camToggle, setCamToggle] = useState(false);
+  const [camToggle, setCamToggle] = useState(true);
 
   return (
     <div>
