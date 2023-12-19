@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
-const MediaRecorderCapture = (props) => {
+const MediaRecorderCapture = ({ camToggle }) => {
   const [mediaRecorder, setMediaRecorder] = useState({});
   const [isRecording, setIsRecording] = useState(false);
   const recorderRef = useRef();
@@ -93,7 +93,7 @@ const MediaRecorderCapture = (props) => {
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: true,
           video: {
-            facingMode: "user",
+            facingMode: camToggle ? "user" : { exact: "environment" },
           },
         });
         console.log("Stream fetched");
