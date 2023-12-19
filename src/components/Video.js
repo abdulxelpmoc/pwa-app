@@ -173,6 +173,7 @@ const MediaRecorderCapture = ({ camToggle }) => {
         <h3>MediaRecorderCapture</h3>
         <video
           className="recorder"
+          style={{ width: 300, height: 300, marginTop: "-35px" }}
           ref={recorderRef}
           autoPlay
           playsInline

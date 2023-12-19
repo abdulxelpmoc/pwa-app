@@ -5,7 +5,11 @@ export default function App() {
   const [camToggle, setCamToggle] = useState(true);
 
   return (
-    <div>
+    <div
+      style={{
+        padding: "10px",
+      }}
+    >
       <button onClick={() => setCamToggle(!camToggle)}>SPIN CAM</button>
       <WebcamCapture camToggle={camToggle} />
       <Video camToggle={camToggle} />
