@@ -44,7 +44,7 @@ const MediaRecorderCapture = ({ camToggle }) => {
     };
 
     console.log("MediaRecorder ready");
-  }, [mediaRecorder]);
+  }, [mediaRecorder, camToggle]);
 
   const createDownloadLink = (url) => {
     const link = (
