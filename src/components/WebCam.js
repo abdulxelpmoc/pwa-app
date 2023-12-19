@@ -22,8 +22,8 @@ const WebcamCapture = () => {
   return (
     <div>
       <Webcam
-        width={100}
-        height={100}
+        width={300}
+        height={300}
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
