@@ -20,7 +20,7 @@ const MediaRecorderCapture = ({ camToggle }) => {
    */
   useEffect(() => {
     initializeMediaRecorder();
-  }, []);
+  }, [camToggle]);
 
   /**
    * Upon MedaRecorder being set, monitor the following events
@@ -44,7 +44,7 @@ const MediaRecorderCapture = ({ camToggle }) => {
     };
 
     console.log("MediaRecorder ready");
-  }, [mediaRecorder, camToggle]);
+  }, [mediaRecorder]);
 
   const createDownloadLink = (url) => {
     const link = (
